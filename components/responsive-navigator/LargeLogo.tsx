@@ -9,8 +9,8 @@ const LargeIcon: FC = () => {
 
   return (
     <View style={styles.container}>
-      <Icon name="sunrise" size={32} color={theme.colors.icon.subtle} style={styles.logo} />
-      <Text style={styles.header}>hapseer</Text>
+      <Icon name="mail" size={32} color={theme.colors.icon.subtle} style={styles.logo} />
+      <Text style={styles.header}>Wallet</Text>
     </View>
   );
 };
