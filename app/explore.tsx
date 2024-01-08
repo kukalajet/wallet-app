@@ -1,13 +1,19 @@
-import { View, Text } from 'react-native';
+import { useConfigStore } from '@/store/config';
+import { View, Text, Button } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 const ExplorePage = () => {
   const { styles } = useStyles(stylesheet);
-  // const { themeMode, setThemeMode } = useConfigStore();
+  const { themeMode, setThemeMode } = useConfigStore();
 
   return (
     <View style={styles.container}>
+      <Text>{themeMode}</Text>
       <Text>Explore Screen</Text>
+      <Button
+        title="Set theme"
+        onPress={() => setThemeMode(themeMode === 'light' ? 'dark' : 'light')}
+      />
     </View>
   );
 };
