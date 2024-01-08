@@ -1,13 +1,16 @@
-import { View, Text } from 'react-native';
+import { useBearStore } from '@/store/bear';
+import { View, Text, Button } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 const MorePage = () => {
   const { styles } = useStyles(stylesheet);
-  // const { themeMode, setThemeMode } = useConfigStore();
+  const { increase, removeAll } = useBearStore();
 
   return (
     <View style={styles.container}>
       <Text>More Screen</Text>
+      <Button title="Increase by 8" onPress={() => increase(8)} />
+      <Button title="Remove All" onPress={removeAll} />
     </View>
   );
 };
