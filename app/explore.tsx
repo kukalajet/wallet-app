@@ -1,11 +1,15 @@
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 const ExplorePage = () => {
   const { styles } = useStyles(stylesheet);
   // const { themeMode, setThemeMode } = useConfigStore();
 
-  return <View style={[styles.container]} />;
+  return (
+    <View style={styles.container}>
+      <Text>Explore Screen</Text>
+    </View>
+  );
 };
 
 const stylesheet = createStyleSheet(({ colors }) => ({

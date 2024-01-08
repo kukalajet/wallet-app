@@ -1,10 +1,15 @@
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 const MorePage = () => {
   const { styles } = useStyles(stylesheet);
+  // const { themeMode, setThemeMode } = useConfigStore();
 
-  return <View style={styles.container} />;
+  return (
+    <View style={styles.container}>
+      <Text>More Screen</Text>
+    </View>
+  );
 };
 
 const stylesheet = createStyleSheet(({ colors }) => ({
