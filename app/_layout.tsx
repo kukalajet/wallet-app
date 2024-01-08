@@ -9,6 +9,8 @@ import { SplashScreen } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import '@/styles/unistyles';
+import { useConfigStore } from '@/store/config';
+import { UnistylesRuntime } from 'react-native-unistyles';
 
 const tabs: ResponsiveNavigatorTab[] = [
   {
@@ -38,6 +40,7 @@ const tabs: ResponsiveNavigatorTab[] = [
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const { themeMode } = useConfigStore();
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
@@ -53,6 +56,10 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [loaded]);
+
+  useEffect(() => {
+    UnistylesRuntime?.setTheme(themeMode);
+  }, [themeMode]);
 
   if (!loaded) {
     return null;
