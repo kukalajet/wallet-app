@@ -17,13 +17,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.inno8.wallet-app"
+      "bundleIdentifier": "com.inno8.wallet"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.inno8.wallet"
     },
     "web": {
       "bundler": "metro",
